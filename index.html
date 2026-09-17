@@ -69,6 +69,20 @@
       user-select: none;
     }
 
+    /* 鼠标/触摸停止后由 JS 加上 ui-idle，所有操作层淡出但粒子场继续运行。 */
+    .hud,
+    .panel-wrap,
+    #camera-diagnostics {
+      transition: opacity 420ms ease;
+    }
+
+    body.ui-idle .hud,
+    body.ui-idle .panel-wrap,
+    body.ui-idle #camera-diagnostics {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     .brand {
       top: 24px;
       left: 26px;
@@ -1089,6 +1103,20 @@
       }
     }
 
+    function initUIIdle() {
+      const idleDelay = 5000;
+      let timer;
+      const wakeUI = () => {
+        document.body.classList.remove("ui-idle");
+        clearTimeout(timer);
+        timer = setTimeout(() => document.body.classList.add("ui-idle"), idleDelay);
+      };
+      ["pointermove", "pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+        window.addEventListener(eventName, wakeUI, { passive: true });
+      });
+      wakeUI();
+    }
+
     function initPanel() {
       const panel = document.getElementById("panel");
       const toggle = document.getElementById("panel-toggle");
@@ -1117,6 +1145,7 @@
         resize();
         window.addEventListener("resize", resize, { passive: true });
         initPanel();
+        initUIIdle();
         requestAnimationFrame(render);
         await startCameraAndHands();
       } catch (error) {
