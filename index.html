@@ -315,13 +315,13 @@
 
       <section class="group">
         <h3 class="group-title">星尘粒子</h3>
-        <div class="control"><label for="count">粒子数量</label><input id="count" type="range" data-config="particles.count" min="12000" max="72000" step="6000" value="48000"><output data-output="count">48000</output></div>
-        <div class="control"><label for="size">粒子大小</label><input id="size" type="range" data-config="particles.size" min="0.5" max="4" step="0.1" value="2"><output data-output="size"></output></div>
-<div class="control"><label for="brightness">发光亮度</label><input id="brightness" type="range" data-config="particles.brightness" min="0.2" max="3" step="0.1" value="1.2"><output data-output="brightness"></output></div>
-<div class="control"><label for="pull">手势牵引</label><input id="pull" type="range" data-config="particles.pull" min="0.2" max="3" step="0.1" value="1"><output data-output="pull"></output></div>
-<div class="control"><label for="trail">流光余韵</label><input id="trail" type="range" data-config="particles.trail" min="0.2" max="1.5" step="0.1" value="0.8"><output data-output="trail"></output></div>
-<div class="control"><label for="fieldRadius">力场范围</label><input id="fieldRadius" type="range" data-config="particles.fieldRadius" min="0.08" max="0.32" step="0.01" value="0.19"><output data-output="fieldRadius"></output></div>
-<div class="control"><label for="releasePower">释放力度</label><input id="releasePower" type="range" data-config="particles.releasePower" min="0.15" max="1" step="0.05" value="0.35"><output data-output="releasePower"></output></div>
+        <div class="control"><label for="count">粒子数量</label><input id="count" type="range" data-config="particles.count" min="12000" max="72000" step="6000" value="72000"><output data-output="count">72000</output></div>
+        <div class="control"><label for="size">粒子大小</label><input id="size" type="range" data-config="particles.size" min="0.5" max="4" step="0.1" value="4"><output data-output="size"></output></div>
+<div class="control"><label for="brightness">发光亮度</label><input id="brightness" type="range" data-config="particles.brightness" min="0.2" max="3" step="0.1" value="3"><output data-output="brightness"></output></div>
+<div class="control"><label for="pull">手势牵引</label><input id="pull" type="range" data-config="particles.pull" min="0.2" max="3" step="0.1" value="3"><output data-output="pull"></output></div>
+<div class="control"><label for="trail">流光余韵</label><input id="trail" type="range" data-config="particles.trail" min="0.2" max="1.5" step="0.1" value="1.5"><output data-output="trail"></output></div>
+<div class="control"><label for="fieldRadius">力场范围</label><input id="fieldRadius" type="range" data-config="particles.fieldRadius" min="0.08" max="0.32" step="0.01" value="0.32"><output data-output="fieldRadius"></output></div>
+<div class="control"><label for="releasePower">释放力度</label><input id="releasePower" type="range" data-config="particles.releasePower" min="0.15" max="1" step="0.05" value="1"><output data-output="releasePower"></output></div>
       </section>
       <div class="panel-foot">摄像头仅用于手势追踪，不显示画面或手部轮廓。</div>
     </aside>
@@ -340,7 +340,7 @@
      * simResolution、dampSmall、ampThresh、moveThresh 是内部固定参数，按需求不放进面板。
      */
     const CONFIG = {
-      particles: { count: 48000, capacity: 72000, size: 2.0, brightness: 1.2, pull: 1.0, trail: 0.8, fieldRadius: 0.19, releasePower: 0.35, recyclePerFrame: 900 },
+      particles: { count: 72000, capacity: 72000, size: 4.0, brightness: 3.0, pull: 3.0, trail: 1.5, fieldRadius: 0.32, releasePower: 1.0, recyclePerFrame: 900 },
       simulation: {
         waveSpeed: 0.31,
         injectStrength: 0.06,
